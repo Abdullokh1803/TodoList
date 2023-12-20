@@ -23,7 +23,7 @@ const TodoForm = (props) => {
       />
       <button onClick={btnForm}>Add</button>
       {todos.length > 3 ? <button onClick={()=>delAll()}>Clear All</button> : null}
-    </div>
+    </div> 
   );
 };
 

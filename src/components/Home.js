@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TodoForm from "./Todo-form/Todo-form";
 import TodoList from "./Todo-list/Todo-list";
 
 const Home = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(JSON.parse(localStorage.getItem('todos')) || []);
   const [val, setVal] = useState("");
 
   const btnAdd = (inpVal) => {
@@ -18,6 +18,10 @@ const Home = () => {
       setTodos([...todos, newItem]);
     }
   };
+
+  useEffect(()=> {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos])
 
   const btnDelete = (id) => {
     setTodos([...todos.filter((elem) => id !== elem.id)]);
@@ -40,7 +44,6 @@ const Home = () => {
   };
 
   const lineDecor = (id) => {
-    console.log(id);
     setTodos([
       ...todos.map((elem) =>
         elem.id === id ? { ...elem, completed: !elem.completed } : { ...elem }

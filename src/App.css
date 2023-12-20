@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 20px;
 }
 
 .todo-form{
@@ -13,3 +14,62 @@
 .todo-form input, .todo-form button{
     font-size: 18px;
 }
+
+.todo-list {
+    display: flex;
+    gap: 10px;
+    width: 400px;
+    padding: 10px 10px;
+    border: 1px solid red;
+    background: #666;
+    color: #fff;
+    justify-content: space-between;
+    align-items: center;
+}
+.noDecor {
+    width: 300px;
+    letter-spacing: 2px;
+    font-size: 22px;
+    cursor: pointer;
+    border-left: 3px solid rgb(0, 255, 85);
+    padding-left: 10px;
+}
+.decor{
+    width: 300px;
+    letter-spacing: 2px;
+    font-size: 22px;
+    text-decoration: line-through;
+    cursor: pointer;
+    border-left: 3px solid red;
+    padding-left: 10px;
+}
+.todo-list input{
+    width: 300px;
+    padding: 4.5px 5px;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    background-color: #373737;
+    color: #fff;
+}
+.todo-list button{
+    background-color:#373737 ;
+    border: none;
+    color: #fff;
+    padding: 5px 30px;
+}
+.todo-list button:active{
+    background-color: black;
+}
+i{
+    cursor: pointer;
+}
+.fa-pen:active{
+    color: rgb(5, 202, 5);
+    scale: 1.2;
+}
+.fa-trash:active{
+    color: red;
+    scale: 1.2;
+}
+
